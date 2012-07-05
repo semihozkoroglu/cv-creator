@@ -1,0 +1,43 @@
+% cv-custom.tex
+%
+% Custom macro commands and packages
+% for formatting a Curriculum Vitae.
+%
+% Author: Matthew Earnshaw <matt@earnshaw.org.uk>
+% Inspired by http://www.cv-templates.info/2009/03/professional-cv-latex/
+
+\pagestyle{empty}
+
+% Packages
+\usepackage[usenames,dvipsnames]{color} % For custom colours
+\usepackage{titlesec} % For custom section headings
+\usepackage{mdwlist} % For compact lists
+\usepackage[pdftex]{hyperref}
+\usepackage{marvosym} % For icons
+
+% Hyperlink colour and style
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks, urlcolor=linkcolour, linkcolor=linkcolour}
+
+% Custom colour
+\definecolor{lgray}{gray}{0.4}
+
+% Custom list bullet
+\renewcommand{\labelitemi}{$\succ$}
+
+% Header commands
+\newcommand{\name}[1]{\LARGE\textbf{#1}}
+\newcommand{\address}[1]{\color{lgray}{#1}}
+\newcommand{\tel}[1]{\Large\Telefon~\small{#1}}
+\newcommand{\email}[1]{\Large\Letter~\href{mailto:#1}{\small{#1}}}
+\newcommand{\web}[2]{\Large\Mundus~\href{#1}{\small{#2}}}
+	
+% Section headings
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{0.6cm}{5pt}
+% Note: Create an environment for sections ?
+
+% Full width tables
+\newenvironment{ftabular}[1]
+{\begin{tabular*}{0.95\textwidth}{@{\extracolsep{\fill}}#1}}
+{\end{tabular*}}
